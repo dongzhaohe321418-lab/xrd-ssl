@@ -76,7 +76,19 @@ AdamW (lr=1e-3, wd=1e-4), gradient clipping (norm 1.0), 20 epochs, batch size 32
 
 Sort-match SSL with 10% labels matches fully supervised performance (p > 0.05, no significant difference) and reduces error by 45% compared to supervised-10%. Random matching (3x worse) confirms that sorting — not merely data volume — drives the improvement.
 
-### 4.2 Noise Robustness (Table 2)
+### 4.2 Low-Label Ablation (Table 2 / Figure 3)
+
+| Label Fraction | Supervised MAE | SSL MAE | Improvement |
+|---------------|---------------|---------|-------------|
+| 2% (16 structures) | 11.92 +/- 0.02 | 4.23 +/- 0.13 | **+65%** |
+| 5% (40 structures) | 9.51 +/- 0.58 | 4.11 +/- 0.17 | **+57%** |
+| 10% (80 structures) | 7.24 +/- 0.24 | 4.34 +/- 0.25 | +40% |
+| 20% (160 structures) | 5.84 +/- 0.37 | 4.03 +/- 0.01 | +31% |
+| 50% (400 structures) | 4.79 +/- 0.32 | 4.11 +/- 0.13 | +14% |
+
+**Key finding**: The SSL advantage grows monotonically as labeled data decreases — the classic "textbook SSL signature." At 2% labels (only 16 structures!), supervised training collapses to 11.92 degrees while SSL maintains 4.23 degrees. This demonstrates that sort-match provides a robust training signal even when labeled data is extremely scarce.
+
+### 4.3 Noise Robustness (Table 3)
 
 | Condition | Noise sigma | Spurious peaks | MAE (deg) |
 |-----------|-------------|----------------|-----------|
@@ -91,7 +103,7 @@ Sort-match SSL with 10% labels matches fully supervised performance (p > 0.05, n
 
 However, spurious peaks (10% false peaks inserted) degrade performance significantly (MAE increases by 29% to 5.26 degrees), because spurious peaks disrupt the sort-match correspondence. This identifies a practical failure mode: the method is less suitable when peak detection has high false-positive rates.
 
-### 4.3 2D Extension (Table 3)
+### 4.4 2D Extension (Table 4)
 
 | Variant | Position MAE | Intensity R^2 |
 |---------|-------------|---------------|
@@ -104,7 +116,7 @@ Position prediction is consistent across 2D variants. Intensity prediction is es
 
 Physics-informed direction sampling (von Mises, kappa=2.0) does not outperform uniform sampling. This null result is reported transparently.
 
-### 4.4 Physical Context of 4-Degree MAE
+### 4.5 Physical Context of 4-Degree MAE
 
 A 4-degree MAE in 2theta corresponds to approximately:
 - **Phase identification**: Sufficient for distinguishing major crystal systems (cubic vs hexagonal vs orthorhombic), where characteristic peak patterns differ by >10 degrees.
