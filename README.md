@@ -3,44 +3,27 @@
 Extends the [NMR-SSL](https://arxiv.org/abs/2601.18524) sort-match framework
 to powder X-ray diffraction (XRD) peak prediction from crystal structures.
 
-## Key Claim
+## Key Results
 
-A GNN trained with **sort-match self-supervised loss** on unassigned XRD peak
-lists achieves position MAE of **3.87 degrees** (vs 3.78 supervised with 100%
-labels), using only **10%** labeled data — **98% of fully supervised
-performance**. With the same 10% labels but no SSL, supervised-only achieves
-7.11 degrees (46% relative improvement from SSL). The 1D sort-match theorem
-(proved optimal for convex costs) transfers directly from NMR chemical shifts
-to XRD 2theta positions.
+Sort-match SSL with **10% labeled data** matches fully supervised performance:
+
+| Variant | Labels | MAE (degrees 2theta) |
+|---------|--------|---------------------|
+| Supervised | 100% | 4.13 +/- 0.23 |
+| **Sort-match SSL** | **10%** | **4.09 +/- 0.31** |
+| Supervised | 10% | 7.38 +/- 0.40 |
+
+At **2% labels**, SSL still achieves **4.23 degrees** while supervised collapses
+to **11.92 degrees** (+65% improvement).
 
 ## Method
 
 1. **Input**: Crystal structure (atomic coordinates + lattice)
-2. **Model**: 4-layer GIN with manual message passing (no torch_geometric)
+2. **Model**: 4-layer GIN, 257k parameters (no torch_geometric)
 3. **Output**: Set of 50 predicted peak positions {2theta_i}
-4. **Loss**: Sort-match loss -- sort predictions and targets independently,
-   then compute L1. Proved equivalent to Hungarian matching for 1D convex
-   costs (O(n log n) vs O(n^3)).
-
-## Project Structure
-
-```
-xrd-ssl/
-  src/
-    losses.py       -- sort-match + masked variant + Hungarian reference
-    features.py     -- crystal graph construction (atoms, bonds, RBF)
-    model.py        -- 4-layer GIN encoder + peak prediction head
-    xrd_data.py     -- Materials Project download + pymatgen XRD simulation
-  tests/
-    test_theorem.py -- numerical verification: sort-match == Hungarian
-  experiments/
-    sanity_check.py -- 3-variant comparison (supervised/random/sort-match)
-    make_figures.py -- training curves + scatter plots
-  docs/
-    theorem_2d.md   -- 2D extension via sliced-Wasserstein (Session 2)
-  figures/          -- generated plots (PDF+PNG)
-  data/             -- cached structures and XRD patterns (gitignored)
-```
+4. **Loss**: Sort-match — sort predictions and targets independently,
+   then L1. Proved optimal for 1D convex costs (O(n log n) vs O(n^3)).
+5. **Data**: 5,000 Materials Project structures, pymatgen XRD simulation
 
 ## Quick Start
 
@@ -48,33 +31,60 @@ xrd-ssl/
 pip install -r requirements.txt
 export MP_API_KEY='your_key'
 
-# 1. Verify theorem
-pytest tests/test_theorem.py -v
+# 1. Verify theorem (31/31 tests pass)
+python3 -m pytest tests/ -v
 
 # 2. Download data + simulate XRD
-python src/xrd_data.py --n_structures 1000
+python3 src/xrd_data.py --n_structures 1000
 
-# 3. Run sanity experiment
-python experiments/sanity_check.py
+# 3. Run main experiment
+python3 experiments/sanity_check.py
 
-# 4. Generate figures
-python experiments/make_figures.py
+# 4. Run low-label ablation (key result)
+python3 experiments/run_low_label.py
+
+# 5. Generate all figures
+python3 figures/compile_all.py
 ```
 
-## Results (Session 1 — Sanity Check on 1000 structures)
+## Project Structure
 
-| Variant | Labels | Best MAE (degrees 2theta) |
-|---------|--------|--------------------------|
-| Supervised | 100% | 3.78 |
-| **Sort-match SSL** | **10%** | **3.87** |
-| Supervised | 10% | 7.11 |
-| Random match | 10% | 11.97 |
+```
+xrd-ssl/
+  src/
+    losses.py       -- 1D sort-match + masked variant + Hungarian reference
+    losses_2d.py    -- 2D sliced-Wasserstein loss
+    features.py     -- crystal graph construction (atoms, bonds, RBF)
+    model.py        -- 4-layer GIN + optional intensity head
+    xrd_data.py     -- Materials Project download + pymatgen XRD simulation
+  tests/
+    test_theorem.py -- 22 tests: sort-match == Hungarian to <1e-10
+    test_2d.py      -- 9 tests: 2D counterexample, SW convergence
+  experiments/
+    sanity_check.py     -- 4-variant main comparison
+    run_2d.py           -- 2D position+intensity experiment
+    run_multiseed.py    -- 3-seed statistical validation
+    run_low_label.py    -- label fraction sweep (key result)
+    run_noise_robustness.py -- noise corruption experiment
+    run_hungarian_benchmark.py -- runtime comparison
+    failure_analysis.py -- worst-case structure analysis
+  docs/
+    preprint_v2.md   -- paper draft (post peer review)
+    theorem_2d.md    -- 2D counterexample + SW justification
+    review_round1.md -- simulated 5-reviewer peer review
+    review_round2.md -- revision review (Minor Revision)
+    lit-review.md    -- literature survey
+  figures/           -- publication-quality PDF+PNG
+```
 
-**Theorem verification**: 22/22 tests pass. Sort-match equals Hungarian
-matching to machine precision (<1e-10) for MSE, MAE, and Huber costs,
-with and without masking.
+## Key Findings
 
-**Model**: 257,078 parameters (4-layer GIN, hidden_dim=128).
+- **Theorem transfers**: Sort-match (NMR) works for XRD without modification
+- **Low-label regime**: SSL advantage grows from +14% (50% labels) to +65% (2% labels)
+- **Noise robust**: Tolerates 1-degree Gaussian noise (MAE +0.04), sensitive to spurious peaks (+29%)
+- **73x faster**: Sort-match vs Hungarian at n=50 peaks
+- **Intensity**: Not learned at current scale (R^2 near 0) — honest limitation
+- **2D counterexample**: No exact 2D sort-match exists (formal proof)
 
 ## Citation
 
