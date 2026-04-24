@@ -1,0 +1,102 @@
+{
+  "supervised_frac0.02": {
+    "variant": "supervised",
+    "label_frac": 0.02,
+    "maes": [
+      11.901805257201195,
+      11.94124128997326
+    ],
+    "mean": 11.921523273587226,
+    "std": 0.01971801638603221
+  },
+  "sort_match_ssl_frac0.02": {
+    "variant": "sort_match_ssl",
+    "label_frac": 0.02,
+    "maes": [
+      4.092934277653694,
+      4.362907309532165
+    ],
+    "mean": 4.227920793592929,
+    "std": 0.13498651593923539
+  },
+  "supervised_frac0.05": {
+    "variant": "supervised",
+    "label_frac": 0.05,
+    "maes": [
+      10.090090363025665,
+      8.936485751271247
+    ],
+    "mean": 9.513288057148456,
+    "std": 0.5768023058772087
+  },
+  "sort_match_ssl_frac0.05": {
+    "variant": "sort_match_ssl",
+    "label_frac": 0.05,
+    "maes": [
+      3.937433053255081,
+      4.282712123394012
+    ],
+    "mean": 4.110072588324547,
+    "std": 0.1726395350694656
+  },
+  "supervised_frac0.1": {
+    "variant": "supervised",
+    "label_frac": 0.1,
+    "maes": [
+      6.99711234331131,
+      7.477391412854194
+    ],
+    "mean": 7.237251878082752,
+    "std": 0.24013953477144234
+  },
+  "sort_match_ssl_frac0.1": {
+    "variant": "sort_match_ssl",
+    "label_frac": 0.1,
+    "maes": [
+      4.089716721177101,
+      4.5919631254673
+    ],
+    "mean": 4.340839923322201,
+    "std": 0.25112320214509953
+  },
+  "supervised_frac0.2": {
+    "variant": "supervised",
+    "label_frac": 0.2,
+    "maes": [
+      6.21278116941452,
+      5.468880098462105
+    ],
+    "mean": 5.840830633938312,
+    "std": 0.3719505354762078
+  },
+  "sort_match_ssl_frac0.2": {
+    "variant": "sort_match_ssl",
+    "label_frac": 0.2,
+    "maes": [
+      4.0435052943229675,
+      4.015689772367478
+    ],
+    "mean": 4.029597533345223,
+    "std": 0.013907760977744932
+  },
+  "supervised_frac0.5": {
+    "variant": "supervised",
+    "label_frac": 0.5,
+    "maes": [
+      4.469706757068634,
+      5.108053371906281
+    ],
+    "mean": 4.788880064487458,
+    "std": 0.31917330741882344
+  },
+  "sort_match_ssl_frac0.5": {
+    "variant": "sort_match_ssl",
+    "label_frac": 0.5,
+    "maes": [
+      3.978164238333702,
+      4.236535819768906
+    ],
+    "mean": 4.107350029051304,
+    "std": 0.12918579071760194
+  }
+}
