@@ -1,0 +1,32 @@
+{
+  "clean": {
+    "mae": 4.071929854750633,
+    "sigma": 0.0,
+    "spurious": 0.0
+  },
+  "noise_0.1": {
+    "mae": 4.011687302589417,
+    "sigma": 0.1,
+    "spurious": 0.0
+  },
+  "noise_0.3": {
+    "mae": 4.118626259565353,
+    "sigma": 0.3,
+    "spurious": 0.0
+  },
+  "noise_1.0": {
+    "mae": 4.111534494757652,
+    "sigma": 1.0,
+    "spurious": 0.0
+  },
+  "spurious_10pct": {
+    "mae": 5.262134717106819,
+    "sigma": 0.0,
+    "spurious": 0.1
+  },
+  "combined": {
+    "mae": 4.863373795747757,
+    "sigma": 0.3,
+    "spurious": 0.1
+  }
+}
