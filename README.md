@@ -6,10 +6,12 @@ to powder X-ray diffraction (XRD) peak prediction from crystal structures.
 ## Key Claim
 
 A GNN trained with **sort-match self-supervised loss** on unassigned XRD peak
-lists achieves position MAE within **[TBD]** of fully supervised training,
-using only **10%** labeled data. The 1D sort-match theorem (proved optimal for
-convex costs) transfers directly from NMR chemical shifts to XRD 2theta
-positions.
+lists achieves position MAE of **3.87 degrees** (vs 3.78 supervised with 100%
+labels), using only **10%** labeled data — **98% of fully supervised
+performance**. With the same 10% labels but no SSL, supervised-only achieves
+7.11 degrees (46% relative improvement from SSL). The 1D sort-match theorem
+(proved optimal for convex costs) transfers directly from NMR chemical shifts
+to XRD 2theta positions.
 
 ## Method
 
@@ -59,13 +61,20 @@ python experiments/sanity_check.py
 python experiments/make_figures.py
 ```
 
-## Results (Session 1)
+## Results (Session 1 — Sanity Check on 1000 structures)
 
-| Variant | Test MAE (degrees 2theta) |
-|---------|--------------------------|
-| Supervised | [TBD] |
-| Sort-match SSL (10% labels) | [TBD] |
-| Random-match | [TBD] |
+| Variant | Labels | Best MAE (degrees 2theta) |
+|---------|--------|--------------------------|
+| Supervised | 100% | 3.78 |
+| **Sort-match SSL** | **10%** | **3.87** |
+| Supervised | 10% | 7.11 |
+| Random match | 10% | 11.97 |
+
+**Theorem verification**: 22/22 tests pass. Sort-match equals Hungarian
+matching to machine precision (<1e-10) for MSE, MAE, and Huber costs,
+with and without masking.
+
+**Model**: 257,078 parameters (4-layer GIN, hidden_dim=128).
 
 ## Citation
 

@@ -136,8 +136,8 @@ class XRDPredictor(nn.Module):
         Returns:
             pred_2theta: (B, n_peaks) predicted peak positions in degrees.
         """
-        x = self.node_embed(graph.node_feats)        # (N, hidden)
-        edge_feats = self.edge_embed(graph.edge_feats)  # (E, hidden)
+        x = self.node_embed(graph.node_feats.float())        # (N, hidden)
+        edge_feats = self.edge_embed(graph.edge_feats.float())  # (E, hidden)
 
         # Message passing
         for gin in self.gin_layers:
