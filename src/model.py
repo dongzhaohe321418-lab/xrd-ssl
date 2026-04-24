@@ -94,11 +94,13 @@ class XRDPredictor(nn.Module):
         n_layers: int = 4,
         n_peaks: int = 50,
         dropout: float = 0.1,
+        predict_intensity: bool = False,
         node_feat_dim: int = NODE_FEAT_DIM,
         edge_feat_dim: int = EDGE_FEAT_DIM,
     ):
         super().__init__()
         self.n_peaks = n_peaks
+        self.predict_intensity = predict_intensity
 
         # Input embedding
         self.node_embed = nn.Linear(node_feat_dim, hidden_dim)
@@ -109,18 +111,30 @@ class XRDPredictor(nn.Module):
             GINLayer(hidden_dim, hidden_dim) for _ in range(n_layers)
         ])
 
-        # Output head: mean||sum -> MLP -> 2theta values
-        self.output_head = nn.Sequential(
+        # Output head for 2theta: mean||sum -> MLP -> n_peaks values
+        self.theta_head = nn.Sequential(
             nn.Linear(hidden_dim * 2, hidden_dim),
             nn.ReLU(),
             nn.Dropout(dropout),
             nn.Linear(hidden_dim, n_peaks),
         )
 
-        # Initialize output bias to spread across [5, 90] range
+        # Initialize 2theta bias to spread across [5, 90] range
         with torch.no_grad():
             bias = torch.linspace(10.0, 80.0, n_peaks)
-            self.output_head[-1].bias.copy_(bias)
+            self.theta_head[-1].bias.copy_(bias)
+
+        # Optional intensity head (Session 2: 2D extension)
+        if predict_intensity:
+            self.intensity_head = nn.Sequential(
+                nn.Linear(hidden_dim * 2, hidden_dim),
+                nn.ReLU(),
+                nn.Dropout(dropout),
+                nn.Linear(hidden_dim, n_peaks),
+            )
+            # Initialize intensity bias to log-scale mid-range
+            with torch.no_grad():
+                self.intensity_head[-1].bias.fill_(50.0)
 
     def forward(
         self,
@@ -159,11 +173,16 @@ class XRDPredictor(nn.Module):
         # Concatenate mean and sum
         graph_repr = torch.cat([pool_mean, pool_sum], dim=1)  # (B, hidden*2)
 
-        # Predict peaks
-        pred_2theta = self.output_head(graph_repr)  # (B, n_peaks)
-
-        # Clamp to physical range [5, 90] degrees
+        # Predict 2theta positions
+        pred_2theta = self.theta_head(graph_repr)  # (B, n_peaks)
         pred_2theta = pred_2theta.clamp(5.0, 90.0)
+
+        if self.predict_intensity:
+            # Predict intensities (0-100 scale)
+            pred_intensity = self.intensity_head(graph_repr)  # (B, n_peaks)
+            pred_intensity = pred_intensity.clamp(0.0, 100.0)
+            # Stack into (B, n_peaks, 2): [2theta, intensity]
+            return torch.stack([pred_2theta, pred_intensity], dim=-1)
 
         return pred_2theta
 
@@ -175,12 +194,16 @@ def build_model(
     hidden_dim: int = 128,
     n_layers: int = 4,
     n_peaks: int = 50,
+    predict_intensity: bool = False,
 ) -> XRDPredictor:
     """Build the XRD predictor model.
 
     Default config targets <500k parameters.
     """
-    model = XRDPredictor(hidden_dim=hidden_dim, n_layers=n_layers, n_peaks=n_peaks)
+    model = XRDPredictor(
+        hidden_dim=hidden_dim, n_layers=n_layers, n_peaks=n_peaks,
+        predict_intensity=predict_intensity,
+    )
     n_params = model.count_parameters()
-    print(f"Model: {n_params:,} parameters (target <500k)")
+    print(f"Model: {n_params:,} parameters (target <500k), intensity={predict_intensity}")
     return model
