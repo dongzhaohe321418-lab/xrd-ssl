@@ -5,8 +5,8 @@ data/
 
 # Results
 results/
-figures/*.png
-figures/*.pdf
+# figures/*.png  # Tracked for paper
+# figures/*.pdf  # Tracked for paper
 
 # Python
 __pycache__/
