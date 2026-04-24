@@ -1,0 +1,74 @@
+{
+  "random_init_frac0.1": {
+    "variant": "random_init",
+    "frac": 0.1,
+    "acc": 0.04,
+    "top5": 0.11
+  },
+  "random_init_frac0.2": {
+    "variant": "random_init",
+    "frac": 0.2,
+    "acc": 0.04,
+    "top5": 0.15
+  },
+  "random_init_frac0.5": {
+    "variant": "random_init",
+    "frac": 0.5,
+    "acc": 0.03,
+    "top5": 0.06
+  },
+  "random_init_frac1.0": {
+    "variant": "random_init",
+    "frac": 1.0,
+    "acc": 0.02,
+    "top5": 0.05
+  },
+  "sort_match_ssl_frac0.1": {
+    "variant": "sort_match_ssl",
+    "frac": 0.1,
+    "acc": 0.03,
+    "top5": 0.08
+  },
+  "sort_match_ssl_frac0.2": {
+    "variant": "sort_match_ssl",
+    "frac": 0.2,
+    "acc": 0.05,
+    "top5": 0.1
+  },
+  "sort_match_ssl_frac0.5": {
+    "variant": "sort_match_ssl",
+    "frac": 0.5,
+    "acc": 0.07,
+    "top5": 0.11
+  },
+  "sort_match_ssl_frac1.0": {
+    "variant": "sort_match_ssl",
+    "frac": 1.0,
+    "acc": 0.05,
+    "top5": 0.21
+  },
+  "infonce_only_frac0.1": {
+    "variant": "infonce_only",
+    "frac": 0.1,
+    "acc": 0.1,
+    "top5": 0.24
+  },
+  "infonce_only_frac0.2": {
+    "variant": "infonce_only",
+    "frac": 0.2,
+    "acc": 0.12,
+    "top5": 0.24
+  },
+  "infonce_only_frac0.5": {
+    "variant": "infonce_only",
+    "frac": 0.5,
+    "acc": 0.13,
+    "top5": 0.31
+  },
+  "infonce_only_frac1.0": {
+    "variant": "infonce_only",
+    "frac": 1.0,
+    "acc": 0.18,
+    "top5": 0.47
+  }
+}
