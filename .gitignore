@@ -1,0 +1,41 @@
+# Data
+data/
+*.npz
+*.lmdb
+
+# Results
+results/
+figures/*.png
+figures/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Environment
+.env
+*.key
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs (keep structure, ignore contents)
+logs/*.md
