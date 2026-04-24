@@ -1,0 +1,934 @@
+{
+  "worst_100": [
+    {
+      "material_id": "mp-752974",
+      "mae": 19.04251480102539,
+      "n_peaks": 36,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-758096",
+      "mae": 15.669272422790527,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-19009",
+      "mae": 14.375226020812988,
+      "n_peaks": 5,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753945",
+      "mae": 13.100008964538574,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1095223",
+      "mae": 12.85572624206543,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-540540",
+      "mae": 12.10610580444336,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1178251",
+      "mae": 11.841731071472168,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-22408",
+      "mae": 11.214434623718262,
+      "n_peaks": 6,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1206444",
+      "mae": 10.960062026977539,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1394",
+      "mae": 10.883747100830078,
+      "n_peaks": 13,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-776245",
+      "mae": 10.080292701721191,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-759163",
+      "mae": 9.472747802734375,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-27484",
+      "mae": 9.40095329284668,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752857",
+      "mae": 8.965871810913086,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753800",
+      "mae": 8.828043937683105,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-19184",
+      "mae": 8.711604118347168,
+      "n_peaks": 6,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-23079",
+      "mae": 8.476318359375,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1975124",
+      "mae": 8.438424110412598,
+      "n_peaks": 29,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-756822",
+      "mae": 8.337789535522461,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752923",
+      "mae": 8.30199909210205,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1101248",
+      "mae": 8.057024002075195,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752970",
+      "mae": 8.032382011413574,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-759886",
+      "mae": 7.749185085296631,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-556859",
+      "mae": 7.359025478363037,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753858",
+      "mae": 7.071169376373291,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-777821",
+      "mae": 6.85470724105835,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1228685",
+      "mae": 6.815302848815918,
+      "n_peaks": 50,
+      "crystal_system": "Monoclinic",
+      "spacegroup": "Cm",
+      "nsites": 27,
+      "formula": "B8O"
+    },
+    {
+      "material_id": "mp-2422872",
+      "mae": 6.470509052276611,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-763436",
+      "mae": 6.416130542755127,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753271",
+      "mae": 6.353946685791016,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753006",
+      "mae": 6.270489692687988,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-27815",
+      "mae": 6.242671966552734,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-28855",
+      "mae": 6.237277984619141,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-758600",
+      "mae": 6.195612907409668,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-780862",
+      "mae": 6.163742542266846,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-755894",
+      "mae": 6.001124382019043,
+      "n_peaks": 43,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-22432",
+      "mae": 5.9314751625061035,
+      "n_peaks": 34,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-756889",
+      "mae": 5.921919345855713,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-782725",
+      "mae": 5.911070346832275,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-353",
+      "mae": 5.872992038726807,
+      "n_peaks": 12,
+      "crystal_system": "Cubic",
+      "spacegroup": "Pn-3m",
+      "nsites": 6,
+      "formula": "Ag2O"
+    },
+    {
+      "material_id": "mp-540855",
+      "mae": 5.868913650512695,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-29966",
+      "mae": 5.83682107925415,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-754919",
+      "mae": 5.713111400604248,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1295109",
+      "mae": 5.703580379486084,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1192166",
+      "mae": 5.571678638458252,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-779316",
+      "mae": 5.549243927001953,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753539",
+      "mae": 5.537479877471924,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-754016",
+      "mae": 5.21923828125,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-28545",
+      "mae": 5.154351234436035,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-625998",
+      "mae": 5.092608451843262,
+      "n_peaks": 36,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1206367",
+      "mae": 5.028970241546631,
+      "n_peaks": 17,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-755364",
+      "mae": 5.020050048828125,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-27355",
+      "mae": 5.016692638397217,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753030",
+      "mae": 4.910518169403076,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-753727",
+      "mae": 4.679425239562988,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-850936",
+      "mae": 4.649901866912842,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-755765",
+      "mae": 4.555701732635498,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1078192",
+      "mae": 4.451669692993164,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-36526",
+      "mae": 4.386462688446045,
+      "n_peaks": 10,
+      "crystal_system": "Cubic",
+      "spacegroup": "F-43m",
+      "nsites": 3,
+      "formula": "AcOF"
+    },
+    {
+      "material_id": "mp-1178379",
+      "mae": 4.362947463989258,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-754151",
+      "mae": 4.330527305603027,
+      "n_peaks": 31,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-758397",
+      "mae": 4.274076461791992,
+      "n_peaks": 45,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-760369",
+      "mae": 4.213522434234619,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-754746",
+      "mae": 4.193499565124512,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1103281",
+      "mae": 4.19010066986084,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-755284",
+      "mae": 4.133071422576904,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1178377",
+      "mae": 4.125039577484131,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-754338",
+      "mae": 4.123748302459717,
+      "n_peaks": 50,
+      "crystal_system": "Orthorhombic",
+      "spacegroup": "Ibam",
+      "nsites": 12,
+      "formula": "Ag2O"
+    },
+    {
+      "material_id": "mp-1102554",
+      "mae": 4.106683731079102,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-504576",
+      "mae": 4.054314136505127,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1191507",
+      "mae": 4.0190324783325195,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752944",
+      "mae": 3.906064033508301,
+      "n_peaks": 41,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1178455",
+      "mae": 3.895501136779785,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752839",
+      "mae": 3.8869123458862305,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1178290",
+      "mae": 3.8810973167419434,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1179949",
+      "mae": 3.8410484790802,
+      "n_peaks": 20,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-545820",
+      "mae": 3.8093700408935547,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-755738",
+      "mae": 3.798820734024048,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-755428",
+      "mae": 3.7781167030334473,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-779913",
+      "mae": 3.766505718231201,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-761122",
+      "mae": 3.747565984725952,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-850984",
+      "mae": 3.735727548599243,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1176457",
+      "mae": 3.700900077819824,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-989189",
+      "mae": 3.6618001461029053,
+      "n_peaks": 49,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-17525",
+      "mae": 3.6519429683685303,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-626620",
+      "mae": 3.646646022796631,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752547",
+      "mae": 3.595844030380249,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1221539",
+      "mae": 3.5807626247406006,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-763022",
+      "mae": 3.569317102432251,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1287184",
+      "mae": 3.5647406578063965,
+      "n_peaks": 38,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-768810",
+      "mae": 3.5326318740844727,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752756",
+      "mae": 3.5268378257751465,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-759705",
+      "mae": 3.4506025314331055,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-763934",
+      "mae": 3.440850019454956,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-1178337",
+      "mae": 3.4115471839904785,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-752516",
+      "mae": 3.408221960067749,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-675734",
+      "mae": 3.392930269241333,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-781710",
+      "mae": 3.381319284439087,
+      "n_peaks": 50,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-29241",
+      "mae": 3.3361093997955322,
+      "n_peaks": 17,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    },
+    {
+      "material_id": "mp-754282",
+      "mae": 3.308424472808838,
+      "n_peaks": 18,
+      "crystal_system": "unknown",
+      "spacegroup": "unknown",
+      "nsites": 0,
+      "formula": "unknown"
+    }
+  ],
+  "crystal_system_enrichment": {
+    "unknown": {
+      "worst_pct": 96.0,
+      "overall_pct": 95.5
+    },
+    "Monoclinic": {
+      "worst_pct": 1.0,
+      "overall_pct": 1.5
+    },
+    "Cubic": {
+      "worst_pct": 2.0,
+      "overall_pct": 1.0
+    },
+    "Orthorhombic": {
+      "worst_pct": 1.0,
+      "overall_pct": 0.5
+    },
+    "Tetragonal": {
+      "worst_pct": 0.0,
+      "overall_pct": 1.5
+    }
+  },
+  "summary": {
+    "worst_mean_peaks": 45.06,
+    "overall_mean_peaks": 46.05,
+    "worst_mean_atoms": 0.48,
+    "overall_mean_atoms": 0.48,
+    "worst_mean_mae": 6.062717738151551,
+    "overall_mean_mae": 4.1810963451862335
+  }
+}

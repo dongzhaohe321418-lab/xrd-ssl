@@ -41,16 +41,23 @@ MAX_ENERGY = 0.1      # eV/atom above hull (near-stable structures)
 def download_structures(
     n_structures: int = 5000,
     cache_dir: str = "data/mp_structures",
+    chemical_systems: List[str] = None,
 ) -> List[Dict]:
-    """Download oxide structures from Materials Project.
+    """Download structures from Materials Project.
 
     Filters:
-        - Oxides (contains O)
         - Formation energy < 0.1 eV/atom above hull
         - <= 30 atoms in unit cell
         - Ordered (no partial occupancy)
 
-    Returns list of dicts with material_id, structure, formula, symmetry.
+    The search returns structures directly (no separate CIF download needed).
+    This is 100x faster than per-ID downloads.
+
+    Args:
+        n_structures: max structures to download.
+        cache_dir: directory for caching.
+        chemical_systems: list of required elements, e.g. ["O"] for oxides.
+            If None, downloads across all chemistries.
     """
     from mp_api.client import MPRester
 
@@ -62,38 +69,58 @@ def download_structures(
         )
 
     cache_path = Path(cache_dir) / "structures.json"
+    cif_dir = Path(cache_dir) / "cifs"
+
+    # Check cache first
     if cache_path.exists():
         print(f"Loading cached structures from {cache_path}")
         with open(cache_path) as f:
             cached = json.load(f)
-        print(f"  {len(cached)} structures loaded from cache")
-        if len(cached) >= n_structures:
-            return cached[:n_structures]
-        print(f"  Need {n_structures - len(cached)} more, re-downloading...")
+        # Count how many CIFs we actually have
+        existing_cifs = sum(1 for e in cached if (cif_dir / f"{e['material_id']}.cif").exists())
+        print(f"  {len(cached)} entries, {existing_cifs} CIFs on disk")
+        if existing_cifs >= n_structures:
+            return [e for e in cached if (cif_dir / f"{e['material_id']}.cif").exists()][:n_structures]
 
     print(f"Querying Materials Project for up to {n_structures} structures...")
-    with MPRester(api_key) as mpr:
-        docs = mpr.materials.summary.search(
-            elements=["O"],
-            energy_above_hull=(0, MAX_ENERGY),
-            num_sites=(1, MAX_ATOMS),
-            fields=[
-                "material_id",
-                "structure",
-                "formula_pretty",
-                "symmetry",
-                "nsites",
-                "energy_above_hull",
-            ],
-        )
+    search_kwargs = dict(
+        energy_above_hull=(0, MAX_ENERGY),
+        num_sites=(1, MAX_ATOMS),
+        fields=[
+            "material_id",
+            "structure",
+            "formula_pretty",
+            "symmetry",
+            "nsites",
+            "energy_above_hull",
+        ],
+    )
+    if chemical_systems:
+        search_kwargs["elements"] = chemical_systems
 
-    # Filter ordered structures and limit count
+    with MPRester(api_key) as mpr:
+        docs = mpr.materials.summary.search(**search_kwargs)
+
+    # Filter and save — structures come directly from search, no per-ID call
+    os.makedirs(cif_dir, exist_ok=True)
     results = []
-    for doc in docs:
+    print(f"Processing {len(docs)} candidates...")
+    for doc in tqdm(docs):
         if not doc.structure.is_ordered:
             continue
+
+        mp_id = str(doc.material_id)
+        cif_path = cif_dir / f"{mp_id}.cif"
+
+        # Save CIF directly from the structure object
+        if not cif_path.exists():
+            try:
+                doc.structure.to(filename=str(cif_path))
+            except Exception as e:
+                continue
+
         results.append({
-            "material_id": str(doc.material_id),
+            "material_id": mp_id,
             "formula": doc.formula_pretty,
             "spacegroup": doc.symmetry.symbol if doc.symmetry else "unknown",
             "crystal_system": doc.symmetry.crystal_system.value if doc.symmetry else "unknown",
@@ -102,27 +129,12 @@ def download_structures(
         if len(results) >= n_structures:
             break
 
-    # Cache metadata (structures saved separately as CIF)
+    # Cache metadata
     os.makedirs(cache_dir, exist_ok=True)
     with open(cache_path, "w") as f:
         json.dump(results, f, indent=2)
 
-    # Save CIF files
-    cif_dir = Path(cache_dir) / "cifs"
-    os.makedirs(cif_dir, exist_ok=True)
-    print(f"Saving {len(results)} CIF files...")
-    with MPRester(api_key) as mpr:
-        for i, entry in enumerate(tqdm(results)):
-            cif_path = cif_dir / f"{entry['material_id']}.cif"
-            if cif_path.exists():
-                continue
-            try:
-                struct = mpr.get_structure_by_material_id(entry["material_id"])
-                struct.to(filename=str(cif_path))
-            except Exception as e:
-                print(f"  Failed {entry['material_id']}: {e}")
-
-    print(f"Downloaded {len(results)} structures")
+    print(f"Downloaded {len(results)} structures ({len(results)} CIFs saved)")
     return results
 
 

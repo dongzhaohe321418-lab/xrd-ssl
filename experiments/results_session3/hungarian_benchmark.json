@@ -1,0 +1,52 @@
+{
+  "runtime": {
+    "10": {
+      "n": 10,
+      "sort_match_ms": 0.0195,
+      "hungarian_ms": 0.2737,
+      "speedup": 14.0
+    },
+    "20": {
+      "n": 20,
+      "sort_match_ms": 0.0443,
+      "hungarian_ms": 0.2499,
+      "speedup": 5.6
+    },
+    "30": {
+      "n": 30,
+      "sort_match_ms": 0.0148,
+      "hungarian_ms": 0.4922,
+      "speedup": 33.2
+    },
+    "50": {
+      "n": 50,
+      "sort_match_ms": 0.0228,
+      "hungarian_ms": 1.6681,
+      "speedup": 73.3
+    },
+    "100": {
+      "n": 100,
+      "sort_match_ms": 0.0413,
+      "hungarian_ms": 6.145,
+      "speedup": 148.7
+    }
+  },
+  "equivalence": {
+    "10": {
+      "n": 10,
+      "max_error": 3.552713678800501e-15
+    },
+    "20": {
+      "n": 20,
+      "max_error": 3.552713678800501e-15
+    },
+    "30": {
+      "n": 30,
+      "max_error": 2.6645352591003757e-15
+    },
+    "50": {
+      "n": 50,
+      "max_error": 1.7763568394002505e-15
+    }
+  }
+}
