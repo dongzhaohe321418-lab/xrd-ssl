@@ -39,3 +39,5 @@ Thumbs.db
 
 # Logs (keep structure, ignore contents)
 logs/*.md
+preprint_arxiv.aux
+preprint_arxiv.log
